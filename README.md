@@ -12,8 +12,6 @@
 
 **一个注重架构设计与工程实践的 Python 本地编码 Agent 框架。**
 
-一次关于 Agent 框架如何设计、组织与演进的实践。
-
 - **日志是唯一事实源**：模型看到的每一条消息都能从 `.sessions/*.jsonl` 重建，支持崩溃/OOM 后恢复执行。
 - **六层架构**：values → capability → state → runtime → app → web，通过分层设计明确模块职责与边界。
 - **完整工具体系**：12 个真实工具，支持文件操作、代码执行等能力。
@@ -28,8 +26,6 @@
 
 **使用纯 PyTorch 从零实现 Qwen3 推理引擎，探索 LLM 推理系统的底层实现。**
 
-从模型结构到推理调度，逐步理解 LLM Inference Engine 的核心技术，并尝试使用 Triton 替换 PyTorch 实现。
-
 - **核心算子**：手写 RMSNorm、RoPE、GQA、SwiGLU 等模块，完整覆盖 Prefill / Decode 路径。
 - **推理调度**：实现 Continuous Batching、Paged KV Cache 与 CUDA Graph 图池。
 - **服务接口**：提供 OpenAI 兼容 HTTP API，支持 Chat / Completion、函数调用与思考链开关。
@@ -42,8 +38,6 @@
 ### [HowToMove](https://github.com/uphome/HowToMove) — Agentic RL with GRPO
 
 **使用 GRPO 训练 Qwen3-0.6B，让模型通过工具调用完成网格迷宫中的长程寻路任务。**
-
-探索 LLM 后训练与 Agent 能力的结合，研究如何通过强化学习让模型学会规划、决策与使用工具。
 
 - **训推同源**：单进程、共享模型对象，保证 Rollout 与训练 Log Probability 一致，支持 4GB 显存设备。
 - **自研环境**：基于 MiniGrid 思路构建迷宫生成器，包含 4200 张地图数据。
